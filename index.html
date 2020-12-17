@@ -8,24 +8,131 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
 		<link rel="stylesheet" href="dist/theme/custom.css">
-
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;600&display=swap" rel="stylesheet">
+		<style>
+			.container{
+				display:flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-				<section data-markdown>
+				<section
+				data-markdown data-separator="^---"
+				data-separator-vertical="^@@@"
+				data-separator-notes="^Note:">
 					<textarea data-template>
-				    ## Page title
-				    A paragraph with some text and a [link (http://hakim.se).
-				  </textarea>
-				</section>
+					# Git Collaboration Basic
+					@@@
+					- Clone project repo to start
+					- Save current work to commit<br> check point locally
+					- Push local branch to the cloud
+					- Open a pull request (PR)
+					---
+					## Clone project repo to start
+					Get a copy of the project code and stick the folder in your local machine
 
+					🔽 
+					@@@
+					1. Go to Code tab in your github repo
+					2. Click on Code button
+					3. Copy the clone link(usually https)
+					
+					<img src="image/clone.png" />
+					@@@
+					4. Go to your terminal of the choice<br>*i.e. zsh, bash, cmd, powershell*
+					5. Navigate to the directory where<br> you would like the project folder to live
+					6. Enter this below command
+					```bash
+					git clone &lt;the_link_you_just_copied&gt;
+					```
+					@@@
+					The command initiates the folder to be a **git repository**
+
+					There is a hidden **.git** folder being created<br>
+					which is responsible for tracking your file changes
+
+					<img src="image/git-folder.png" />
+					@@@
+					Now you have downloaded all the necessary code file
+
+					Open the project folder with your favourite code editor/IDE<br>
+					And start coding : )
+					---
+					## Save current work to commit<br> check point locally
+					I wrote some code, now what?
+					
+					🔽
+					@@@
+					When you made change to the files
+
+					`git` knows it and will instruct the editor to flag you
+
+					For example, in VScode<br>the source control side bar will show a badge
+
+					<img src="image/file-change.png" />
+					@@@
+					If you click on the source control tab<br>
+					you'll see something like this
+
+					<img src="image/change-type.png" />
+
+					<p><span style="color:aqua">M</span> - means modified</p>
+					<p><span style="color:forestgreen">U</span> - means updated, mostly adding file</p>
+					<p><span style="color:red">D</span> - means deleted</p>
+					@@@
+					If you choose to bury these changes underground <br>and never see them again
+
+					Here's a very handy tool/button in VScode source control tab
+
+					<img src="image/discard.png" />
+					@@@
+					<div class="container">
+						<p style="text-align: left;">
+							BUT!<br>
+							If you're pretty happy with the changes<br>
+							We will need to save the work with git command<br><br>
+							You can do so in several ways<br>here I will explain 3
+						</p>
+						<ul>
+							<li>git command line</li>
+							<li>VScode extension</li>
+							<li>Gitkraken</li>
+						</ul>
+					</div>
+					@@@
+					### 1st Step: <br>add/stage the changes
+					| Git command| VScode | Gitkraken |
+					| ------------- |-------------| -----|
+					| <img src="image/git-add-cmd.png" />| <img src="image/git-add-vs.png"/>| <img src="image/git-add-kraken.png" />|
+					| <p>add . will add all the changes or you can specify the individual file with space separated</p>| <p>in the source control tab under changes section there is a button called "stage changes"</p> | <p>at the right hand side of the Gitkraken, you have green buttons to either "stage all changes" or "stage file(single)"</p> |
+					@@@
+					> A staging step in git allows you to continue making changes to the working directory, and when you decide you wanna
+					interact with version control, it allows you to record changes in small commits.
+					@@@
+					### 2nd Step: <br>commit the changes
+					| Git command| VScode | Gitkraken |
+					| ------------- |-------------| -----|
+					| <img src="image/git-commit-cmd.png" />| <img src="image/git-commit-vs.png" />| <img src="image/git-commit-kraken.png" />|
+					| <p>-m set the following argument to be the commit message</p> | <p>in the source control tab there is a textbox for you to enter commit message, press enter to commit</p> | <p>at the right hand side bottom of the Gitkraken, you can type in commit message and/or the longer description</p>|
+					@@@
+					> The "commit" command is used to save your changes to the LOCAL repository. Your team can't see your committed changes yet
+					@@@
+					### 3rd Step: <br> push commit(s) to the remote
+					| Git command| VScode | Gitkraken |
+					| ------------- |-------------| -----|
+				</textarea>
+				</section>
+					
 			</div>
 		</div>
 

@@ -40,19 +40,20 @@ section.has-light-background, section.has-light-background h1, section.has-light
   background-color: #191919; }
 
 .reveal {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  /* font-family: "Source Sans Pro", Helvetica, sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 42px;
   font-weight: normal;
   color: #fff; }
 
 .reveal ::selection {
   color: #fff;
-  background: #bee4fd;
+  background: #01f1cc;
   text-shadow: none; }
 
 .reveal ::-moz-selection {
   color: #fff;
-  background: #bee4fd;
+  background: #01f1cc;
   text-shadow: none; }
 
 .reveal .slides section,
@@ -71,25 +72,26 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #fff;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  /* font-family: "Source Sans Pro", Helvetica, sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-shadow: none;
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 2.5em; }
-
-.reveal h2 {
-  font-size: 1.6em; }
-
-.reveal h3 {
   font-size: 1.3em; }
 
-.reveal h4 {
+.reveal h2 {
   font-size: 1em; }
+
+.reveal h3 {
+  font-size: 0.8em; }
+
+.reveal h4 {
+  font-size: 0.5em; }
 
 .reveal h1 {
   text-shadow: none; }
@@ -98,8 +100,10 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * OTHER
  *********************************************/
 .reveal p {
+  font-size: 0.5em;
   margin: 20px 0;
-  line-height: 1.3; }
+  line-height: 1.3;
+}
 
 /* Remove trailing margins after titles */
 .reveal h1:last-child,
@@ -119,23 +123,29 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 .reveal strong,
 .reveal b {
-  font-weight: bold; }
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
 .reveal em {
-  font-style: italic; }
+  font-style: italic;
+font-size: 0.8em;}
 
 .reveal ol,
 .reveal dl,
 .reveal ul {
   display: inline-block;
   text-align: left;
-  margin: 0 0 0 1em; }
+  margin: 0 0 0 1em;
+font-size: 0.8em;}
 
 .reveal ol {
   list-style-type: decimal; }
 
 .reveal ul {
-  list-style-type: disc; }
+  list-style-type: square; }
 
 .reveal ul ul {
   list-style-type: square; }
@@ -151,10 +161,12 @@ section.has-light-background, section.has-light-background h1, section.has-light
   margin-left: 40px; }
 
 .reveal dt {
-  font-weight: bold; }
+  font-weight: bold;
+font-size: 0.5em;}
 
 .reveal dd {
-  margin-left: 40px; }
+  margin-left: 40px;
+font-size: 0.5em;}
 
 .reveal blockquote {
   display: block;
@@ -164,39 +176,46 @@ section.has-light-background, section.has-light-background h1, section.has-light
   padding: 5px;
   font-style: italic;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+font-size: 1.5em;}
 
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
   display: inline-block; }
 
 .reveal q {
-  font-style: italic; }
+  font-style: italic;
+font-size: 0.5em;}
 
 .reveal pre {
   display: block;
   position: relative;
-  width: 90%;
+  /* width: 90%; */
   margin: 20px auto;
   text-align: left;
-  font-size: 0.55em;
+  font-size: 0.5em;
   font-family: monospace;
   line-height: 1.2em;
   word-wrap: break-word;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); }
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+max-width: 600px;}
 
 .reveal code {
   font-family: monospace;
-  text-transform: none; }
+  text-transform: none;
+font-size: 1.2em;
+}
 
 .reveal pre code {
   display: block;
-  padding: 5px;
+  padding: 5px 20px;
   overflow: auto;
   max-height: 400px;
-  word-wrap: normal; }
+  word-wrap: normal;
+}
 
 .reveal table {
+  font-size: 0.8em;
   margin: auto;
   border-collapse: collapse;
   border-spacing: 0; }
@@ -207,7 +226,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal table th,
 .reveal table td {
   text-align: left;
-  padding: 0.2em 0.5em 0.2em 0.5em;
+  padding: 0.2em 0.8em 0.2em 0.8em;
   border-bottom: 1px solid; }
 
 .reveal table th[align="center"],
