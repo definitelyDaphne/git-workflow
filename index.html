@@ -19,7 +19,7 @@
 			.container{
 				display:flex;
 				justify-content: space-around;
-				align-items: center;
+				align-items:flex-start;
 			}
 		</style>
 	</head>
@@ -33,15 +33,28 @@
 					<textarea data-template>
 					# Git Collaboration Basic
 					@@@
-					- Clone project repo to start
-					- Save current work to commit<br> check point locally
-					- Push local branch to the cloud
-					- Open a pull request (PR)
-					---
+					## What we will cover
+					<div class="container">
+						<ul>
+							<li>Quick intro to some <em>toolset</em></li>
+							<li><em>Clone project repo</em> to start</li>
+							<li>Make a <em>feature branch</em></li>
+						</ul>
+						<ul>
+							<li>Save current work to <em>commit</em><br> check point locally</li>
+							<li><em>Push</em> local branch to the cloud</li>
+							<li>Open a <em>pull request</em> (PR)</li>
+						</ul>
+					</div>
+					@@@
+					## Quick intro to some toolset
+					- [git command line(CLI)](https://docs.google.com/presentation/d/1an9Z9NO7kl_KlybsPXIKuObCORS3nb1BMt62Yas-mS0/edit?usp=sharing): a version control tool to keep track of file changes, it is NOT Github!!<br>
+					<b style="font-size: 0.8em;">Click on the above link to see our previous git workshop slides</b>
+					- [VS Code](https://code.visualstudio.com/download): a free source-code editor that has fairly good git support extension
+					- [Gitkraken](https://www.gitkraken.com/download): a free Git GUI made by software company Axosoft. Easy to use, recommend!
+					@@@
 					## Clone project repo to start
-					Get a copy of the project code and stick the folder in your local machine
-
-					🔽 
+					*Get a copy of the project code and stick the folder in your local machine*
 					@@@
 					1. Go to Code tab in your github repo
 					2. Click on Code button
@@ -49,7 +62,7 @@
 					
 					<img src="image/clone.png" />
 					@@@
-					4. Go to your terminal of the choice<br>*i.e. zsh, bash, cmd, powershell*
+					4. Go to your terminal of the choice<br>i.e. zsh, bash, cmd, powershell
 					5. Navigate to the directory where<br> you would like the project folder to live
 					6. Enter this below command
 					```bash
@@ -63,15 +76,34 @@
 
 					<img src="image/git-folder.png" />
 					@@@
-					Now you have downloaded all the necessary code file
+					Now you have downloaded all the necessary code file ✨
 
 					Open the project folder with your favourite code editor/IDE<br>
-					And start coding : )
-					---
+					@@@
+					## Make a feature branch
+					*Make a safe playground for yourself*
+					@@@
+					> A branch is like a parallel world where you can create commit without introducing bugs into production code
+					@@@
+					### First, check which branch you are at
+					| Git command| VScode | Gitkraken |
+					| ------------- |-------------| -----|
+					| <img src="image/git-status-cmd.png" />| <img src="image/git-status-vs.png" />| <img src="image/git-status-kraken.png" />|
+					|<p>the first line of the output from git status command give you information about which branch you are at currently</p>|<p>at the left hand side bottom corner you can see the branch name</p>|<p>in Gitkraken, you can find branch status information from left hand and top tool bar</p>
+					@@@
+					### Next, create your new branch
+					| <div style="display: flex;"></div>Git command| <img width=300 style="margin:0" />VScode | <img width=300 style="margin:0" />Gitkraken |
+					| ---------------------- |----------------------| ----------------------|
+					| <pre style="width:400px"><code lang="bash" class="bash hljs">git checkout -b new-branch-name</code></pre><div style="display: flex;justify-content:center"><p style="margin:0">OR</p></div><pre style="width:400px"><code lang="bash" class="bash hljs">git branch new-branch name</code></pre><pre style="width:400px"><code lang="bash" class="bash hljs">git checkout new-branch name</code></pre>| <img src="image/git-status-vs.png" style="margin-bottom: 0; margin-top:0"/><img src="image/git-branch-vs.png" style="margin-bottom: 0;"/><img src="image/git-branch-vs1.png" style="margin-bottom: 0;"/>| <img src="image/git-branch-kraken.png" style="margin-bottom: 0;margin-top:0"/><img src="image/git-branch-kraken1.png" style="margin-bottom: 0;"/>|
+					|<p>use checkout with -b flag will create the branch and then switch to the branch automatically. alternatively, you can create the branch using branch command and then checkout(switch) to the newly created branch</p>|<p>1. click on the branch at the left hand side bottom corner<br>2. select create new branch<br>3. type in new branch's name and then hit enter</li></ol></p>|<p>1. click on the branch at the top tool bar<br>2. type in new branch name into the prompt and then hit enter</p>|
+					@@@
+					Now your code file and workspace are all setup
+
+					*Happy coding : )*
+					@@@
 					## Save current work to commit<br> check point locally
-					I wrote some code, now what?
+					*I wrote some code, now what?*
 					
-					🔽
 					@@@
 					When you made change to the files
 
@@ -96,19 +128,14 @@
 
 					<img src="image/discard.png" />
 					@@@
-					<div class="container">
+					<div style="display: flex; justify-content:center">
 						<p style="text-align: left;">
-							BUT!<br>
-							If you're pretty happy with the changes<br>
-							We will need to save the work with git command<br><br>
-							You can do so in several ways<br>here I will explain 3
-						</p>
-						<ul>
-							<li>git command line</li>
-							<li>VScode extension</li>
-							<li>Gitkraken</li>
-						</ul>
+						<b>BUT!</b><br>
+						If you're pretty happy with the changes<br>
+						We will need to <em>save the work with git command</em>
+					</p>
 					</div>
+					
 					@@@
 					### 1st Step: <br>add/stage the changes
 					| Git command| VScode | Gitkraken |
@@ -123,13 +150,46 @@
 					| Git command| VScode | Gitkraken |
 					| ------------- |-------------| -----|
 					| <img src="image/git-commit-cmd.png" />| <img src="image/git-commit-vs.png" />| <img src="image/git-commit-kraken.png" />|
-					| <p>-m set the following argument to be the commit message</p> | <p>in the source control tab there is a textbox for you to enter commit message, press enter to commit</p> | <p>at the right hand side bottom of the Gitkraken, you can type in commit message and/or the longer description</p>|
+					| <p>-m set the following argument to be the commit message. if you only enter git commit a vim editor will pop up, press "i" to enter insert mode, type your msg, hit "esc", type ":wq" to save.</p> | <p>in the source control tab there is a textbox for you to enter commit message, press enter to commit</p> | <p>at the right hand side bottom of the Gitkraken, you can type in commit message and/or the longer description</p>|
 					@@@
-					> The "commit" command is used to save your changes to the LOCAL repository. Your team can't see your committed changes yet
+					> The "commit" command is used to save your changes to the LOCAL repository.<br><br>Your team won't be able to see your committed changes just yet
 					@@@
-					### 3rd Step: <br> push commit(s) to the remote
+					<p style="font-size:1em;">Some Sidenotes:</p>
+					
+					- commit file size doesn't matter, do it as you wish
+					- make commit message as *concise* and *descriptive* as possible
+					- when add and commit, make sure you group the relevant changes in one batch. If the logic is separate, make another
+					commit
+					
+					@@@
+					## Push local branch to the cloud
+					*So that your team can "checkout" your awesome code*
+
+					@@@
+					### Push commit(s) to the remote
 					| Git command| VScode | Gitkraken |
 					| ------------- |-------------| -----|
+					| <img src="image/git-push-cmd.png" />| <img src="image/git-push-vs.png" />| <img src="image/git-push-kraken.png" />|
+					|<p>git push will send the local commit to the upstream remote branch, if upstream is not set it'll complain, follow the suggested fix from terminal</p> | <p>down the left hand side bottom you will see up arrow with some number, that means we have commits pending delivery, simply click on the arrow to push</p> | <p>at the top toolbar in Gitkraken, click on push button to push commits to the cloud, if the prompt pops up for you to choose upstream, accept and hit ok</p>|
+					@@@
+					> The git push command is used to upload local repository content to a remote repository. Pushing is how you transfer
+					commits from your local repository to a remote repo. <br><br> Now if you go to the project repo and switch to your branch, you should see it being updated
+					@@@
+					<p style="font-size:1em;">Some Sidenotes:</p>
+
+					- push to remote is important in collaboration, as your team will be able to see the latest changes
+					- it is good for file backup too
+					@@@
+					<p style="font-size: 0.8em; text-align:left">
+						Now feel free to commit and push throughout your developing process<br><br>
+						Once you finish the feature assigned to you or you have completed a big task we will <em>make a pull request (PR)</em><br><br>
+					</p>
+					@@@
+					## Open a pull request (PR)
+					*Merge these pls..*
+					@@@
+					> A pull request is basically signaling whoever's maintaining the project codebase that this bunch of files is ready to go
+					into the master branch
 				</textarea>
 				</section>
 					
@@ -140,6 +200,7 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="bower_components/reveal.js-menu/menu.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -148,7 +209,11 @@
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMenu ],
+				menu:{
+					hideMissingTitles: true,
+					titleSelector: 'h1, h2',
+				}
 			});
 		</script>
 	</body>
